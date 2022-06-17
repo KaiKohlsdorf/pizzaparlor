@@ -25,7 +25,7 @@
 function PizzaPie(toppings, size) {
     this.toppings = toppings;
     this.size = size;
-    this.cost = 0;
+    this.cost = x;
   }
   
   PizzaPie.prototype.clickedToppings = function() {
@@ -50,23 +50,25 @@ function PizzaPie(toppings, size) {
 // let pizzaPie = new PizzaPie();
 
 $(document).ready(function() {
-  $("form#new-pizzaPie").submit(function(event) {
+  $("form-group").submit(function(event) {
     event.preventDefault();
-
-    // let pizzaPie = new PizzaPie();
-
-    let toppingChecked = $("input:checkput[name=topping]:checked".map(function() {
+    
+    let toppingChecked = $("input:checkput[name=topping]:checked").map(function() {
       return this.clickedToppings;
-    });
-
+      });
     let sizeChecked = $("input:checkbox[name=size]:checked").val();
     
-    let pizzaPie = new PizzaPie(toppingChecked, sizeChecked);
+    let pizzaPie = PizzaPie(toppingChecked, sizeChecked)
+    // let pizzaPie = new PizzaPie();
+
+    })
+
+    
 
    
 
 
-    ))
+  
     // $("#toppings").show();
     // $("input:checkbox[name=topping]:checked").each(function(){
     //   const topping = $(this).val();
@@ -78,10 +80,9 @@ $(document).ready(function() {
     //   $('#size').append(size + "<br>");
     // })
 
-    const show-pizzaPie = newPizzaPie.cost;
+    const showPizzaPie = PizzaPie.cost;
 
-    $("#show-pizzaPie").show();
-    $("#total").text(show-PizzaPie);
+    // $("#PizzaPie").show();
+    // $("#total").show();
 
   })
-})
