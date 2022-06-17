@@ -25,6 +25,7 @@
 function PizzaPie(toppings, size) {
     this.toppings = toppings;
     this.size = size;
+    this.cost = 0;
   }
   
   PizzaPie.prototype.clickedToppings = function() {
@@ -46,21 +47,36 @@ function PizzaPie(toppings, size) {
 
 // User Interface Logic
 
-let pizzaPie = new PizzaPie();
+// let pizzaPie = new PizzaPie();
 
 $(document).ready(function() {
   $("form#new-pizzaPie").submit(function(event) {
     event.preventDefault();
-    $("#toppings").show();
-    $("input:checkbox[name=topping]:checked").each(function(){
-      const topping = $(this).val();
-      $('#toppings').append(topping + "<br>");
-    })
-    $("#size").show();
-    $("input:checkbox[name=size]:checked").each(function(){
-      const size = $(this).val();
-      $('#size').append(size + "<br>");
-    })
+
+    // let pizzaPie = new PizzaPie();
+
+    let toppingChecked = $("input:checkput[name=topping]:checked".map(function() {
+      return this.clickedToppings;
+    });
+
+    let sizeChecked = $("input:checkbox[name=size]:checked").val();
+    
+    let pizzaPie = new PizzaPie(toppingChecked, sizeChecked);
+
+   
+
+
+    ))
+    // $("#toppings").show();
+    // $("input:checkbox[name=topping]:checked").each(function(){
+    //   const topping = $(this).val();
+    //   $('#toppings').append(topping + "<br>");
+    // })
+    // $("#size").show();
+    // $("input:checkbox[name=size]:checked").each(function(){
+    //   const size = $(this).val();
+    //   $('#size').append(size + "<br>");
+    // })
 
     const show-pizzaPie = newPizzaPie.cost;
 
