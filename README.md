@@ -18,6 +18,30 @@
 
 *Markdown
 
+## TDD
+
+Describe: 
+
+Test: If user does not select anything and clicks the button
+Code: 
+Expected Output;
+
+Test: If user picks one topping and clicks the button
+Code: 
+Expected Output:
+
+Test: If user picks three toppings and clicks the button
+Code: 
+Expected Output:
+
+Test: If user picks a medium pizza and no toppings and clicks the button
+Code: 
+Expected Output:
+
+Test: If user picks a medium pizza and two toppings and clicks the button
+Code:
+Expected Output:
+
 ## Installation
 
 *Clone this repository to your desktop.
