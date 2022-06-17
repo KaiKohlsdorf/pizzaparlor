@@ -1,3 +1,11 @@
 #show-pizzaPie {
   display: none;
 }
+
+#toppings {
+  display: none;
+}
+
+#size {
+  display: none;
+}

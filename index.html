@@ -11,44 +11,49 @@
   <title>Soldano Family Pizza</title>
 </head>
 <body>
-  <h1>Soldano Family Pizza</h1>
-  <h2>Add a Pizza to your Order:</h2>
-  <form id="new-pizzaPie">
-    <label for="new-topping">Topping</label>
-    <input type="" id="new-topping">
-    <label for="new-size">Size</label>
-    <input type="" id="new-size">
-    <button type="submit">Add</button>
-  </form>
-  
-  <h2>Toppings:</h2>
-  <ul id="toppings">
-  </ul>
-
-  <div id="show-topping">
-    <div id="buttons">
+  <div class="container">
+    <div class="jumbotron">
+      <h1><strong>Soldano Vegetarian Family Pizza Pies</strong></h1>
     </div>
-  </div>
+    <h2>Place a Pizza Pie Order:</h2>
 
-  <h2>Size:</h2>
-  <ul id="size">
-  </ul>
+    <br>
 
-  <div id="show-size">
-    <div id="buttons">
-    </div>
-  </div>
+    <form id="new-pizzaPie">
+      <div class="form-group">
+        <h4>I would like these toppings ($1.50 for each topping) on my pizza pie:</h4>
+        <input type="checkbox" name="topping" value="onions">Onions<br>
+        <input type="checkbox" name="topping" value="green peppers">Green Peppers<br>
+        <input type="checkbox" name="topping" value="spinach">Spinach<br>
+        <input type="checkbox" name="topping" value="tomatoes">Tomatoes<br>
+        <input type="checkbox" name="topping" value="black olives">Black Olives<br>
+        <input type="checkbox" name="topping" value="garlic">Garlic<br>
+        <input type="checkbox" name="topping" value="mushrooms">Mushrooms<br>
+      </div>
+      <div class="form-group">
+        <h4>I would like this size pizza pie:</h4>
+        <input type="checkbox" name="size" value="personal">Personal $8<br>
+        <input type="checkbox" name="size" value="medium">Medium $13<br>
+        <input type="checkbox" name="size" value="large">Large $16<br>
+      </div>
 
-  <h2>Pizza Order:</h2>
-  <ul id="pizzaPie">
-  </ul>
-  
-  <div id="show-pizzaPie">
-    <p>Toppings: <span class="toppings"></span></p>
-    <p>Size: <span class="size"></span></p>
-    <p>Cost: <span class="cost"></span></p>
-    <div id="buttons">
+      <br>
+
+      <button type="submit">Submit Pizza Pie Choices</button>
+    </form>
+
+    <br>
+
+    <h2>Soldano Vegetarian Pizza Pie Order:</h2>
+    <ul id="pizzaPie">
+    </ul>
+    
+    <div id="show-pizzaPie">
+      <p>Toppings: <span class="toppings"></span></p>
+      <p>Size: <span class="size"></span></p>
+      <div id="buttons">
+        <h4>Your total is $<span id="total"></span></h4>
+      </div>
     </div>
   </div>
 </body>
-</html>
