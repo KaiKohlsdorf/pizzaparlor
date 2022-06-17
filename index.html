@@ -4,9 +4,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Soldano Family Pizza</title>
 </head>
 <body>
+  <h1>Soldano Family Pizza</h1>
+  <h2>Add a Pizza to your Order:</h2>
+  <form id="new-pizzaPie">
+    <label for="new-topping">Topping</label>
+    <input type="" id="new-topping">
+    <label for="new-size">Size</label>
+    <input type="" id="new-size">
+    <button type="submit">Add</button>
+  </form>
   
+  <h2>Toppings:</h2>
+  <ul id="toppings">
+  </ul>
+
+  <div id="show-topping">
+    <div id="buttons">
+    </div>
+  </div>
+
+  <h2>Size:</h2>
+  <ul id="size">
+  </ul>
+
+  <div id="show-size">
+    <div id="buttons">
+    </div>
+  </div>
+
+  <h2>Pizza Order:</h2>
+  <ul id="pizzaPie">
+  </ul>
+  
+  <div id="show-pizzaPie">
+    <p>Toppings: <span class="toppings"></span></p>
+    <p>Size: <span class="size"></span></p>
+    <p>Cost: <span class="cost"></span></p>
+    <div id="buttons">
+    </div>
+  </div>
 </body>
 </html>

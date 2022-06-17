@@ -24,9 +24,13 @@ PizzaPie.prototype.clickedSize = function() {
 
 // User Interface Logic
 
-$(function() {
-  $("form#order").submit(function(event) {
+let pizzaPie = new PizzaPie();
+
+$(document).ready(function() {
+  $("form#new-pizzaPie").submit(function(event) {
     event.preventDefault();
-    let
+    const inputtedTopping = $("input#new-topping").val();
+    const inputtedSize = $("input#new-size").val();
+    let newPizzaPie = new PizzaPie(inputtedTopping, inputtedSize);
   })
 })
