@@ -20,27 +20,27 @@
 
 ## TDD
 
-Describe: 
+Describe: PizzaPie()
 
-Test: If user does not select anything and clicks the button
-Code: 
-Expected Output;
+Test: "It should return 0 if user does not pick anything and clicks the order button."
+Code: PizzaPie( )
+Expected Output: 0
 
-Test: If user picks one topping and clicks the button
-Code: 
-Expected Output:
+Test: "It should return 1.50 if user picks one topping and clicks the order button."
+Code: PizzaPie(1)
+Expected Output: 1.50
 
-Test: If user picks three toppings and clicks the button
-Code: 
-Expected Output:
+Test: "It should return 4.50 if user picks three toppings and clicks the order button."
+Code: PizzaPie(3)
+Expected Output: 4.50
 
-Test: If user picks a medium pizza and no toppings and clicks the button
-Code: 
-Expected Output:
+Test: "It should return 13 if user picks a medium pizza and no toppings and clicks the order button."
+Code: PizzaPie(0, medium)
+Expected Output: 13
 
-Test: If user picks a medium pizza and two toppings and clicks the button
-Code:
-Expected Output:
+Test: "It should return 16 if user picks a medium pizza and two toppings and clicks the order button."
+Code:PizzaPie(2, medium)
+Expected Output: 16
 
 ## Installation
 

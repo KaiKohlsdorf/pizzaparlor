@@ -7,13 +7,19 @@ function PizzaPie(toppings, size, cost) {
 }
 
 PizzaPie.prototype.clickedToppings = function() {
-  this.cost =
+  this.cost = this.cost + (this.toppings.length * 1.5);
   return this.cost;
 };
 
 PizzaPie.prototype.clickedSize = function() {
-  this.cost =
-  return this.cost;
+  if (this.size === "personal") {
+    this.cost += 8;
+  } else if (this.size === "medium") {
+    this.cost += 13;
+  } else {
+    this.cost += 16;
+  }
+    return this.cost;
 };
 
 // User Interface Logic
