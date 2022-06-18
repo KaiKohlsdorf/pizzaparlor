@@ -22,46 +22,112 @@
 //     return this.cost;
 // };
 
-function PizzaPie(toppings, size) {
-    this.toppings = toppings;
+// function PizzaPie(toppings, size) {
+//   this.toppings = toppings;
+//   this.size = size;
+//   this.cost = x;
+// }
+
+// PizzaPie.prototype.clickedToppings = function() {
+//   this.cost = this.cost + (this.toppings.length * 1.5);
+//   return this.cost;
+// };
+
+// PizzaPie.prototype.clickedSize = function() {
+//   if (this.size === "personal") {
+//     this.cost += 8;
+//   } else if (this.size === "medium") {
+//     this.cost += 13;
+//   } else {
+//     this.cost += 16;
+//   }
+//     return this.cost;
+// };
+
+function PizzaPie(size, toppings) {
     this.size = size;
-    this.cost = x;
+    this.toppings = toppings;
+    this.sizeCost = 0;
+    this.toppingsCost = 0;
+    this.totalCost = 0;
   }
   
-  PizzaPie.prototype.clickedToppings = function() {
-    this.cost = this.cost + (this.toppings.length * 1.5);
-    return this.cost;
-  };
+ 
+  // PizzaPie.prototype.clickedToppings = function() {
+  //   this.toppingsCost = this.cost + (this.toppings.length * 1);
+  //   return this.toppingsCost;
+  // };
+  
   
   PizzaPie.prototype.clickedSize = function() {
     if (this.size === "personal") {
-      this.cost += 8;
+      this.sizeCost = 8;
     } else if (this.size === "medium") {
-      this.cost += 13;
-    } else {
-      this.cost += 16;
+      this.sizeCost = 13;
+    } else if (this.size === "large") {
+      this.sizeCost = 16;
     }
-      return this.cost;
+    return this.sizeCost;
+  };
+  
+
+  PizzaPie.prototype.clickedToppings = function() {
+    this.toppings.forEach(function() {
+      toppingsCost += 2;
+    })
+    return toppingsCost;
   };
 
+  PizzaPie.prototype.calcCost = function() {
+    this.totalCost = this.sizeCost + this.toppingsCost;
+    return this.totalCost;
+  }
 
 // User Interface Logic
 
+$(document).ready(function() {
+  $("#pizza").submit(function(event) {
+    event.preventDefault();
+    const size = $("input:checkbox[name=size]:checked").val();
+    const toppings = [];
+    $("input:checkbox[name=topping]:checked").each(function() {
+      toppings.push($(this).val());
+    })
+    // $("#output").text(pizzaPieCost);
+    $("#total").show(this.totalCost);
+    // $("#output").hide();
+
+  })
+})
+
+
+
+
+
+
+
+
+
 // let pizzaPie = new PizzaPie();
 
-$(document).ready(function() {
-  $("form-group").submit(function(event) {
-    event.preventDefault();
+// $(document).ready(function() {
+//   $("#form-group").submit(function(event) {
+//     event.preventDefault();
     
-    let toppingChecked = $("input:checkput[name=topping]:checked").map(function() {
-      return this.clickedToppings;
-      });
-    let sizeChecked = $("input:checkbox[name=size]:checked").val();
+//     let toppingChecked = $("input:checkput[name=topping]:checked").map(function() {
+//       return this.clickedToppings;
+//       });
+//     let sizeChecked = $("input:checkbox[name=size]:checked").val();
     
-    let pizzaPie = PizzaPie(toppingChecked, sizeChecked)
-    // let pizzaPie = new PizzaPie();
+//     let chosenPizzaPie = new PizzaPie(toppingChecked, sizeChecked)
+//     chosenPizzaPie.clickedSize();
 
-    })
+//     $("#total").text(chosenPizzaPie.clickedSize());
+//     $("#total").show();
+//     // let pizzaPie = new PizzaPie();
+//     // event.preventDefault();
+
+//     })
 
     
 
@@ -85,4 +151,4 @@ $(document).ready(function() {
     // $("#PizzaPie").show();
     // $("#total").show();
 
-  })
+
