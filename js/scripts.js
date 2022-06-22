@@ -1,49 +1,5 @@
 //Business Logic
 
-// function PizzaPie(toppings, size, cost) {
-//   this.toppings = toppings;
-//   this.size = size;
-//   this.cost = cost;
-// }
-
-// PizzaPie.prototype.clickedToppings = function() {
-//   this.cost = this.cost + (this.toppings.length * 1.5);
-//   return this.cost;
-// };
-
-// PizzaPie.prototype.clickedSize = function() {
-//   if (this.size === "personal") {
-//     this.cost += 8;
-//   } else if (this.size === "medium") {
-//     this.cost += 13;
-//   } else {
-//     this.cost += 16;
-//   }
-//     return this.cost;
-// };
-
-// function PizzaPie(toppings, size) {
-//   this.toppings = toppings;
-//   this.size = size;
-//   this.cost = x;
-// }
-
-// PizzaPie.prototype.clickedToppings = function() {
-//   this.cost = this.cost + (this.toppings.length * 1.5);
-//   return this.cost;
-// };
-
-// PizzaPie.prototype.clickedSize = function() {
-//   if (this.size === "personal") {
-//     this.cost += 8;
-//   } else if (this.size === "medium") {
-//     this.cost += 13;
-//   } else {
-//     this.cost += 16;
-//   }
-//     return this.cost;
-// };
-
 function PizzaPie(size, toppings) {
     this.size = size;
     this.toppings = toppings;
@@ -51,14 +7,6 @@ function PizzaPie(size, toppings) {
     this.toppingsCost = 0;
     this.totalCost = 0;
   }
-  // const pizzaPie = new PizzaPie();
-
- 
-  // PizzaPie.prototype.clickedToppings = function() {
-  //   this.toppingsCost = this.cost + (this.toppings.length * 1);
-  //   return this.toppingsCost;
-  // };
-  
   
   PizzaPie.prototype.clickedSize = function() {
     if (this.size === "personal") {
@@ -71,12 +19,13 @@ function PizzaPie(size, toppings) {
     return this.sizeCost;
   };
   
-
   PizzaPie.prototype.clickedToppings = function() {
-    this.toppings.forEach(function() {
-      toppingsCost += 2;
-    })
-    return toppingsCost;
+    this.toppingsCost = this.toppings.length * 1.5 
+    // this.toppings.forEach(function() {
+    //   this.toppingsCost = 
+      console.log(this.toppings.length)
+    // })
+    return this.toppingsCost;
   };
 
   PizzaPie.prototype.calcCost = function() {
@@ -89,27 +38,29 @@ function PizzaPie(size, toppings) {
 $(document).ready(function() {
   $("#pizza").submit(function(event) {
     event.preventDefault();
-    // $(#size).show()
-    $("input.checkbox[name=size]:checked").each(function() {
-      const size = $(this).val();
+    let size
+    let toppings = []
+    $("input:checkbox[name=size]:checked").each(function() {
+      size = $(this).val();
+      console.log(size)
       $('#size').append(size + "<br>");
     })
     // $(#toppings).show()
-    $("input.checkbox[name=toppings]:checked").each(function() {
-      const toppings = $(this).val();
+    $("input:checkbox[name=topping]:checked").each(function() {
+      toppings.push($(this).val())
+      console.log(toppings)
       $('#toppings').append(toppings + "<br>");
     })
-    // const size = $("input:checkbox[name=size]:checked").val();
-    // const toppings = [];
-    // $("input:checkbox[name=topping]:checked").each(function() {
-    //   toppings.push($(this).val());
-    // })
-    $('#total').show(this.totalCost);
-    // $('#total').hide();
-    // const total = new 
-    // $("#output").text(pizzaPieCost);
-    // $("#total").show(this.totalCost);
-    // $("#output").hide();
+    
+    const userPizzaPie = new PizzaPie(size, toppings);
+    console.log(userPizzaPie)
+
+    userPizzaPie.clickedSize()
+    console.log(userPizzaPie.clickedToppings())
+    console.log(userPizzaPie)
+    userPizzaPie.calcCost()
+    $('#total').text(userPizzaPie.totalCost);
+    $('#total').show();
 
   });
 })
@@ -122,47 +73,6 @@ $(document).ready(function() {
 
 
 
-// let pizzaPie = new PizzaPie();
 
-// $(document).ready(function() {
-//   $("#form-group").submit(function(event) {
-//     event.preventDefault();
-    
-//     let toppingChecked = $("input:checkput[name=topping]:checked").map(function() {
-//       return this.clickedToppings;
-//       });
-//     let sizeChecked = $("input:checkbox[name=size]:checked").val();
-    
-//     let chosenPizzaPie = new PizzaPie(toppingChecked, sizeChecked)
-//     chosenPizzaPie.clickedSize();
-
-//     $("#total").text(chosenPizzaPie.clickedSize());
-//     $("#total").show();
-//     // let pizzaPie = new PizzaPie();
-//     // event.preventDefault();
-
-//     })
-
-    
-
-   
-
-
-  
-    // $("#toppings").show();
-    // $("input:checkbox[name=topping]:checked").each(function(){
-    //   const topping = $(this).val();
-    //   $('#toppings').append(topping + "<br>");
-    // })
-    // $("#size").show();
-    // $("input:checkbox[name=size]:checked").each(function(){
-    //   const size = $(this).val();
-    //   $('#size').append(size + "<br>");
-    // })
-
-    const showPizzaPie = PizzaPie.cost;
-
-    // $("#PizzaPie").show();
-    // $("#total").show();
 
 
