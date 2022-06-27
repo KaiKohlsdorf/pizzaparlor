@@ -52,8 +52,7 @@ Expected Output: 16
 
 ## Known Bugs: 
 
-*Submit button does not bring up pizza order.
-*Submit button does not calculate the price.
+*N/A
 
 ## License
 [MIT][<a href=https://github.com/KaiKohlsdorf/pizzaparlor/blob/main/LICENSE>LICENSE</a>]
